@@ -1,0 +1,12 @@
+image: python:3.10
+
+pipelines:
+  default:
+    - step:
+        name: Unit Testing using PyTest
+        caches:
+          - pip
+        script:
+          - python -m pip install --upgrade pip
+          - pip install pytest
+          - pytest tests
